@@ -67,10 +67,10 @@
             <Font name="Calisto MT" size="25.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="comboTitle" layoutX="207.0" layoutY="168.0" prefHeight="26.0" prefWidth="75.0" />
+      <JFXComboBox fx:id="comboTitle" layoutX="207.0" layoutY="168.0" prefHeight="26.0" prefWidth="75.0" promptText="Select Title" />
       <DatePicker fx:id="datePikerDob" layoutX="207.0" layoutY="301.0" prefHeight="35.0" prefWidth="130.0" promptText="Select DOB" />
-      <JFXComboBox fx:id="comboProvince" layoutX="207.0" layoutY="444.0" prefHeight="26.0" prefWidth="130.0" />
-      <JFXComboBox fx:id="comboCity" layoutX="384.0" layoutY="443.0" prefHeight="26.0" prefWidth="130.0" />
+      <JFXComboBox fx:id="comboProvince" layoutX="207.0" layoutY="444.0" onAction="#comboProvinceOnAction" prefHeight="26.0" prefWidth="130.0" promptText="Select Province" />
+      <JFXComboBox fx:id="comboCity" disable="true" layoutX="401.0" layoutY="443.0" prefHeight="26.0" prefWidth="130.0" promptText="Select City" />
       <JFXTextField fx:id="txtName" layoutX="206.0" layoutY="230.0" prefHeight="35.0" prefWidth="322.0">
          <font>
             <Font name="Calibri Bold" size="22.0" />
@@ -91,17 +91,12 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <Button fx:id="btnAdd" layoutX="188.0" layoutY="645.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="87.0" text="ADD">
+      <Button fx:id="btnAdd" layoutX="344.0" layoutY="645.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="87.0" text="ADD">
          <font>
             <Font name="Corbel Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="btnClear" layoutX="315.0" layoutY="646.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="CLEAR">
-         <font>
-            <Font name="Corbel Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnExit" layoutX="440.0" layoutY="645.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="36.0" prefWidth="87.0" style="-fx-background-color: RED;" text="EXIT" textFill="WHITE">
+      <Button fx:id="btnClear" layoutX="450.0" layoutY="645.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="CLEAR">
          <font>
             <Font name="Corbel Bold" size="20.0" />
          </font>
