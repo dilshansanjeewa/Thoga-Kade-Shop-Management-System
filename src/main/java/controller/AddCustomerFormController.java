@@ -204,13 +204,13 @@ public class AddCustomerFormController implements Initializable {
             showAlearts("Input Error...","Please select customer title...");
             return false;
         } else if (txtName.getText() == null || txtName.getText().equals("")) {
-            showAlearts("Input Error...","Please input custome name...");
+            showAlearts("Input Error...","Please input customer name...");
             return false;
         } else if (datePikerDob.getValue() == null) {
             showAlearts("Input Error...","Please select date of birth...");
             return false;
         } else if (txtSalary.getText() == null || txtSalary.getText().equals("")) {
-            showAlearts("Input Error...","Please input custome salary...");
+            showAlearts("Input Error...","Please input customer salary...");
             return false;
         } else if (comboProvince.getValue() == null){
             showAlearts("Input Error...","Please select Province...");
@@ -222,7 +222,7 @@ public class AddCustomerFormController implements Initializable {
             showAlearts("Input Error...","Please input street address...");
             return false;
         } else if (txtPostalCode.getText() == null || txtPostalCode.getText().equals("")) {
-            showAlearts("Input Error...","Please input postalcode...");
+            showAlearts("Input Error...","Please input postal code...");
             return false;
         }
         return true;
