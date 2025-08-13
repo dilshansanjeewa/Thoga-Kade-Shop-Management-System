@@ -2,12 +2,24 @@ package controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import db.DBConnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class UpdateItemFormController {
+import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+public class UpdateItemFormController implements Initializable {
 
     @FXML
     private Button btnClear;
@@ -19,7 +31,7 @@ public class UpdateItemFormController {
     private Button btnUpdate;
 
     @FXML
-    private JFXComboBox<?> comboPackSize;
+    private JFXComboBox<String> comboPackSize;
 
     @FXML
     private TextField txtCode;
@@ -38,17 +50,142 @@ public class UpdateItemFormController {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-
+        clear();
     }
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        if(txtCode.getText() == null || txtCode.getText().equals("")){
+            showAlerts("INPUT ERROR...", "Please Input Item Code...");
+            return;
+        }
+        String code = txtCode.getText();
+        try {
+            ResultSet resultSet = DBConnection.getInstance().getConnection().createStatement().executeQuery("SELECT * FROM Item WHERE Code = '" + code + "';");
 
+            if (resultSet.next()){
+                txtCode.setDisable(true);
+                txtDescription.setText(resultSet.getString("Description"));
+                txtDescription.setDisable(false);
+                String packSize = resultSet.getString("Pack_Size");
+                comboPackSize.setValue(separateUnit(packSize));
+                comboPackSize.setDisable(false);
+                txtPackSize.setText(separateSize(packSize));
+                txtPackSize.setDisable(false);
+                txtUnitPrice.setText(resultSet.getString("Unit_Price"));
+                txtUnitPrice.setDisable(false);
+                txtQtyonHand.setText(resultSet.getString("QTY_On_Hand"));
+                txtQtyonHand.setDisable(false);
+                btnUpdate.setDisable(false);
+
+            }else {
+                showAlerts("NOT FOUND...", "Item Code- "+code+" Not Found...");
+            }
+        } catch (SQLException e) {
+            showAlerts(e.getSQLState(), e.getMessage());
+        }
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        if(checkInputFields()){
+            try {
+                PreparedStatement preparedStatement = DBConnection.getInstance().getConnection().prepareStatement("UPDATE Item SET Description = ?, Pack_Size = ?, Unit_Price = ?, QTY_On_Hand = ? WHERE Code = ?;");
+                preparedStatement.setObject(1,txtDescription.getText());
+                preparedStatement.setObject(2,txtPackSize.getText()+comboPackSize.getValue());
+                preparedStatement.setObject(3,txtUnitPrice.getText());
+                preparedStatement.setObject(4,txtQtyonHand.getText());
+                preparedStatement.setObject(5,txtCode.getText());
 
+                if(0 < preparedStatement.executeUpdate()){
+                    showAlerts("SUCCESS...", "Item Details Updated Successfully...");
+                    clear();
+
+                }else {
+                    showAlerts("FAILED...", "Item Updating Process Failed...\nPlease Try Again...");
+                }
+            } catch (SQLException e) {
+                showAlerts(e.getSQLState(), e.getMessage());
+            }
+        }
     }
 
+    private boolean checkInputFields() {
+        if(txtDescription.getText() == null || txtDescription.getText().equals("")){
+            showAlerts("INPUT ERROR", "Please Input Description");
+            return false;
+        } else if (comboPackSize.getValue() == null) {
+            showAlerts("INPUT ERROR", "Please Select Pack Size");
+            return false;
+        } else if (txtPackSize.getText() == null || txtPackSize.getText().equals("")) {
+            showAlerts("INPUT ERROR", "Please Input Pack Size");
+            return false;
+        } else if (txtUnitPrice.getText() == null || txtUnitPrice.getText().equals("")) {
+            showAlerts("INPUT ERROR", "Please Input Unit Price");
+            return false;
+        } else if (txtQtyonHand.getText() == null || txtQtyonHand.getText().equals("")) {
+            showAlerts("INPUT ERROR", "Please Input QTY on Hand");
+            return false;
+        }
+        return true;
+    }
+
+    private void loadComboPackSize() {
+        ObservableList<String> packSizeList = FXCollections.observableArrayList("g", "kg","mL", "L");
+        comboPackSize.setItems(packSizeList);
+    }
+
+    private String separateUnit(String word){
+        String size = "";
+        for (int i = 0; i<word.length(); i++){
+            char ch = word.charAt(i);
+            if(Character.isLetter(ch)){
+                size+=ch;
+            }
+        }
+        return size;
+    }
+
+    private String separateSize(String word){
+        String unit = "";
+        for (int i = 0; i<word.length(); i++){
+            char ch = word.charAt(i);
+            if(Character.isDigit(ch)){
+                unit+=ch;
+            }
+        }
+        return unit;
+    }
+
+    private void showAlerts(String header, String content){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Alert");
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+
+        Stage stage = (Stage) btnSearch.getScene().getWindow();
+        alert.initOwner(stage);
+        alert.show();
+    }
+
+    private void clear(){
+        txtCode.setText(null);
+        txtCode.setDisable(false);
+        txtDescription.setText(null);
+        txtDescription.setDisable(true);
+        comboPackSize.setValue(null);
+        comboPackSize.setDisable(true);
+        txtPackSize.setText(null);
+        txtPackSize.setDisable(true);
+        txtUnitPrice.setText(null);
+        txtUnitPrice.setDisable(true);
+        txtQtyonHand.setText(null);
+        txtQtyonHand.setDisable(true);
+        btnUpdate.setDisable(true);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadComboPackSize();
+    }
 }
