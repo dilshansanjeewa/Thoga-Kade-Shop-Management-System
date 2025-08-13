@@ -8,7 +8,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="420.0" prefWidth="651.0" style="-fx-background-color: OLDLACE;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddItemFormController">
    <children>
       <Label alignment="CENTER" prefHeight="50.0" prefWidth="650.0" style="-fx-background-color: HONEYDEW;" text="ADD ITEM FORM">
@@ -63,12 +62,12 @@
             <Font size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtPackSize" alignment="CENTER" layoutX="355.0" layoutY="180.0" prefHeight="43.0" prefWidth="200.0">
+      <JFXTextField fx:id="txtPackSize" alignment="CENTER" disable="true" layoutX="355.0" layoutY="180.0" prefHeight="43.0" prefWidth="200.0">
          <font>
             <Font size="20.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="comboPackSize" layoutX="200.0" layoutY="181.0" prefHeight="43.0" prefWidth="130.0" />
+      <JFXComboBox fx:id="comboPackSize" layoutX="200.0" layoutY="181.0" onAction="#comboPackSizeOnAction" prefHeight="43.0" prefWidth="130.0" promptText="Select Size" />
       <Button fx:id="btnAdd" layoutX="227.0" layoutY="370.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="84.0" text="ADD">
          <font>
             <Font name="Arial Narrow Bold" size="20.0" />
