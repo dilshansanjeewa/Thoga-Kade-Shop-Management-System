@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="352.0" prefWidth="600.0" style="-fx-background-color: LAVENDER;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerManagementFormController">
+<AnchorPane prefHeight="352.0" prefWidth="600.0" style="-fx-background-color: MINTCHREAM;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerManagementFormController">
    <children>
       <Label layoutX="252.0" style="-fx-background-color: AZURE; -fx-border-color: BLACK;" text="Thoga Kade">
          <font>
@@ -17,7 +17,7 @@
             <Font name="Stencil" size="35.0" />
          </font>
       </Label>
-      <Button fx:id="btnDeleteCustomer" layoutX="310.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnDeleteCustomerOnAction" prefHeight="46.0" prefWidth="267.0" text="Delete Customer">
+      <Button fx:id="btnDeleteCustomer" layoutX="310.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnDeleteCustomerOnAction" prefHeight="46.0" prefWidth="267.0" text="Delete Customer">
          <font>
             <Font name="Lucida Fax Demibold" size="25.0" />
          </font>
@@ -27,7 +27,7 @@
             <Font name="Lucida Fax Demibold" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="btnUpdateCustomer" layoutX="21.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnUpdateCustomerOnAction" prefHeight="46.0" prefWidth="267.0" text="Update Customer">
+      <Button fx:id="btnUpdateCustomer" layoutX="21.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnUpdateCustomerOnAction" prefHeight="46.0" prefWidth="267.0" text="Update Customer">
          <font>
             <Font name="Lucida Fax Demibold" size="25.0" />
          </font>
