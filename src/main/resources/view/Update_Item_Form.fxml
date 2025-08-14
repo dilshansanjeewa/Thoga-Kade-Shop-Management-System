@@ -50,7 +50,7 @@
       </JFXTextField>
       <JFXTextField fx:id="txtUnitPrice" alignment="CENTER" disable="true" layoutX="200.0" layoutY="241.0" prefHeight="43.0" prefWidth="200.0">
          <font>
-            <Font name="Arial Narrow" size="23.0" />
+            <Font name="Arial Narrow Bold" size="23.0" />
          </font>
       </JFXTextField>
       <JFXTextField fx:id="txtQtyonHand" alignment="CENTER" disable="true" layoutX="200.0" layoutY="297.0" prefHeight="43.0" prefWidth="200.0">

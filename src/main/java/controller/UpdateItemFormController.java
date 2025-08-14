@@ -55,7 +55,7 @@ public class UpdateItemFormController implements Initializable {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
-        if(txtCode.getText() == null || txtCode.getText().equals("")){
+        if(txtCode.getText() == null || txtCode.getText().isEmpty()){
             showAlerts("INPUT ERROR...", "Please Input Item Code...");
             return;
         }
@@ -91,10 +91,15 @@ public class UpdateItemFormController implements Initializable {
         if(checkInputFields()){
             try {
                 PreparedStatement preparedStatement = DBConnection.getInstance().getConnection().prepareStatement("UPDATE Item SET Description = ?, Pack_Size = ?, Unit_Price = ?, QTY_On_Hand = ? WHERE Code = ?;");
+
+                int packSize = Integer.parseInt(txtPackSize.getText());
+                Double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+                int qtyonHand = Integer.parseInt(txtQtyonHand.getText());
+
                 preparedStatement.setObject(1,txtDescription.getText());
-                preparedStatement.setObject(2,txtPackSize.getText()+comboPackSize.getValue());
-                preparedStatement.setObject(3,txtUnitPrice.getText());
-                preparedStatement.setObject(4,txtQtyonHand.getText());
+                preparedStatement.setObject(2,packSize+comboPackSize.getValue());
+                preparedStatement.setObject(3,unitPrice);
+                preparedStatement.setObject(4,qtyonHand);
                 preparedStatement.setObject(5,txtCode.getText());
 
                 if(0 < preparedStatement.executeUpdate()){
@@ -106,25 +111,28 @@ public class UpdateItemFormController implements Initializable {
                 }
             } catch (SQLException e) {
                 showAlerts(e.getSQLState(), e.getMessage());
+            } catch (NumberFormatException e){
+                showAlerts("INVALID INPUT...", "Invalid input...\nPlease Check the values...");
             }
         }
     }
 
     private boolean checkInputFields() {
-        if(txtDescription.getText() == null || txtDescription.getText().equals("")){
-            showAlerts("INPUT ERROR", "Please Input Description");
+        String error = "INPUT ERROR";
+        if(txtDescription.getText() == null || txtDescription.getText().isEmpty()){
+            showAlerts(error, "Please Input Description");
             return false;
         } else if (comboPackSize.getValue() == null) {
-            showAlerts("INPUT ERROR", "Please Select Pack Size");
+            showAlerts(error, "Please Select Pack Size");
             return false;
-        } else if (txtPackSize.getText() == null || txtPackSize.getText().equals("")) {
-            showAlerts("INPUT ERROR", "Please Input Pack Size");
+        } else if (txtPackSize.getText() == null || txtPackSize.getText().isEmpty()) {
+            showAlerts(error, "Please Input Pack Size");
             return false;
-        } else if (txtUnitPrice.getText() == null || txtUnitPrice.getText().equals("")) {
-            showAlerts("INPUT ERROR", "Please Input Unit Price");
+        } else if (txtUnitPrice.getText() == null || txtUnitPrice.getText().isEmpty()) {
+            showAlerts(error, "Please Input Unit Price");
             return false;
-        } else if (txtQtyonHand.getText() == null || txtQtyonHand.getText().equals("")) {
-            showAlerts("INPUT ERROR", "Please Input QTY on Hand");
+        } else if (txtQtyonHand.getText() == null || txtQtyonHand.getText().isEmpty()) {
+            showAlerts(error, "Please Input QTY on Hand");
             return false;
         }
         return true;
