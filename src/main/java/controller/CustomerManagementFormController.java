@@ -54,7 +54,8 @@ public class CustomerManagementFormController {
 
     @FXML
     void btnExitOnAction(ActionEvent event) {
-
+        Stage stage = (Stage) btnAddCustomer.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

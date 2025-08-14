@@ -12,8 +12,8 @@ import java.io.IOException;
 
 public class ThogaKadeHomePageFormController {
 
-    private Stage customerStage = new Stage();
-    private Stage itemStage = new Stage();
+    private final Stage customerStage = new Stage();
+    private final Stage itemStage = new Stage();
 
     @FXML
     private Button btnCustomerManagement;
@@ -33,7 +33,12 @@ public class ThogaKadeHomePageFormController {
 
     @FXML
     void btnItemManagementOnAction(ActionEvent event) {
-
+        try {
+            itemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Item_Management_Form.fxml"))));
+            itemStage.show();
+        } catch (IOException e) {
+            showAlert(e.getClass().getName(), e.getMessage());
+        }
     }
 
     private void showAlert (String title, String content) {

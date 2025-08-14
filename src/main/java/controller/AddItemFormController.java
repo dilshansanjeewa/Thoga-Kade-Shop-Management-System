@@ -97,19 +97,19 @@ public class AddItemFormController implements Initializable {
     }
 
     private boolean checkInputFields() {
-        if(txtDescription.getText() == null || txtDescription.getText().equals("")){
+        if(txtDescription.getText() == null || txtDescription.getText().isEmpty()){
             showAlerts("INPUT ERROR", "Please Input Description");
             return false;
         } else if (comboPackSize.getValue() == null) {
             showAlerts("INPUT ERROR", "Please Select Pack Size");
             return false;
-        } else if (txtPackSize.getText() == null || txtPackSize.getText().equals("")) {
+        } else if (txtPackSize.getText() == null || txtPackSize.getText().isEmpty()) {
             showAlerts("INPUT ERROR", "Please Input Pack Size");
             return false;
-        } else if (txtUnitPrice.getText() == null || txtUnitPrice.getText().equals("")) {
+        } else if (txtUnitPrice.getText() == null || txtUnitPrice.getText().isEmpty()) {
             showAlerts("INPUT ERROR", "Please Input Unit Price");
             return false;
-        } else if (txtQtyonHand.getText() == null || txtQtyonHand.getText().equals("")) {
+        } else if (txtQtyonHand.getText() == null || txtQtyonHand.getText().isEmpty()) {
             showAlerts("INPUT ERROR", "Please Input QTY on Hand");
             return false;
         }

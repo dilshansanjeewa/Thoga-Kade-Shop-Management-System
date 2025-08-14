@@ -159,7 +159,7 @@ public class AddCustomerFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadId();
         loadTitle();
-        loadProince();
+        loadProvince();
     }
 
     private void loadId(){
@@ -174,7 +174,7 @@ public class AddCustomerFormController implements Initializable {
             }
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            showAlearts(e.getSQLState(), e.getMessage());
         }
         return "C001";
     }
@@ -184,7 +184,7 @@ public class AddCustomerFormController implements Initializable {
         comboTitle.setItems(titleList);
     }
 
-    private void loadProince(){
+    private void loadProvince(){
         ObservableList<String> provinceList = FXCollections.observableArrayList(
                 "Western",
                 "Central",
@@ -203,13 +203,13 @@ public class AddCustomerFormController implements Initializable {
         if(comboTitle.getValue() == null){
             showAlearts("Input Error...","Please select customer title...");
             return false;
-        } else if (txtName.getText() == null || txtName.getText().equals("")) {
+        } else if (txtName.getText() == null || txtName.getText().isEmpty()) {
             showAlearts("Input Error...","Please input customer name...");
             return false;
         } else if (datePikerDob.getValue() == null) {
             showAlearts("Input Error...","Please select date of birth...");
             return false;
-        } else if (txtSalary.getText() == null || txtSalary.getText().equals("")) {
+        } else if (txtSalary.getText() == null || txtSalary.getText().isEmpty()) {
             showAlearts("Input Error...","Please input customer salary...");
             return false;
         } else if (comboProvince.getValue() == null){
@@ -218,10 +218,10 @@ public class AddCustomerFormController implements Initializable {
         } else if (comboCity.getValue() == null) {
             showAlearts("Input Error...","Please select city...");
             return false;
-        } else if (txtStreetAddress.getText() == null || txtStreetAddress.getText().equals("")) {
+        } else if (txtStreetAddress.getText() == null || txtStreetAddress.getText().isEmpty()) {
             showAlearts("Input Error...","Please input street address...");
             return false;
-        } else if (txtPostalCode.getText() == null || txtPostalCode.getText().equals("")) {
+        } else if (txtPostalCode.getText() == null || txtPostalCode.getText().isEmpty()) {
             showAlearts("Input Error...","Please input postal code...");
             return false;
         }

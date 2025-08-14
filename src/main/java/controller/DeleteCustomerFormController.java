@@ -68,7 +68,7 @@ public class DeleteCustomerFormController {
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
-        if(txtId.getText() == null || txtId.getText().equals("")){
+        if(txtId.getText() == null || txtId.getText().isEmpty()){
             showAlearts("INPUT ERROR... ", "Please Input Customer ID...");
             return;
         }
