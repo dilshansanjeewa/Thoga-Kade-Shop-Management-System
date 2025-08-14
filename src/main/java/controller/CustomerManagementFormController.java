@@ -36,6 +36,7 @@ public class CustomerManagementFormController {
     void btnAddCustomerOnAction(ActionEvent event) {
         try {
             addCustomerStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Add_Customer_Form.fxml"))));
+            addCustomerStage.setTitle("Add Customer Form");
             addCustomerStage.show();
         } catch (IOException e) {
             showAlerts(e.getClass().getName(), e.getMessage());
@@ -46,6 +47,7 @@ public class CustomerManagementFormController {
     void btnDeleteCustomerOnAction(ActionEvent event) {
         try {
             deleteCustomerStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Delete_Customer_Form.fxml"))));
+            deleteCustomerStage.setTitle("Delete Customer Form");
             deleteCustomerStage.show();
         } catch (IOException e) {
             showAlerts(e.getClass().getName(), e.getMessage());
@@ -62,6 +64,7 @@ public class CustomerManagementFormController {
     void btnUpdateCustomerOnAction(ActionEvent event) {
         try {
             updataCustomerStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Update_Customer_Form.fxml"))));
+            updataCustomerStage.setTitle("Update Customer Form");
             updataCustomerStage.show();
         } catch (IOException e) {
             showAlerts(e.getClass().getName(), e.getMessage());
@@ -72,6 +75,7 @@ public class CustomerManagementFormController {
     void btnViewCustomerOnAction(ActionEvent event) {
         try {
             viewCustomerStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/VIew_Customer_Form.fxml"))));
+            viewCustomerStage.setTitle("View Customer Form");
             viewCustomerStage.show();
         } catch (IOException e) {
             showAlerts(e.getClass().getName(), e.getMessage());

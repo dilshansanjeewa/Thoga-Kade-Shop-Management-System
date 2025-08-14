@@ -36,6 +36,7 @@ public class ItemManagmentFormController {
     void btnAddItemOnAction(ActionEvent event) {
         try {
             addItemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Add_Item_Form.fxml"))));
+            addItemStage.setTitle("Add Item Form");
             addItemStage.show();
         } catch (IOException e) {
            showAlerts(e.getClass().getName(), e.getMessage());
@@ -46,6 +47,7 @@ public class ItemManagmentFormController {
     void btnDeleteItemOnAction(ActionEvent event) {
         try {
             deleteItemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Delete_Item_Form.fxml"))));
+            deleteItemStage.setTitle("Delete Item Form");
             deleteItemStage.show();
         } catch (IOException e) {
             showAlerts(e.getClass().getName(), e.getMessage());
@@ -62,6 +64,7 @@ public class ItemManagmentFormController {
     void btnUpdateItemOnAction(ActionEvent event) {
         try {
             updateItemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Update_Item_Form.fxml"))));
+            updateItemStage.setTitle("Update Item Form");
             updateItemStage.show();
         } catch (IOException e) {
             showAlerts(e.getClass().getName(), e.getMessage());
@@ -72,6 +75,7 @@ public class ItemManagmentFormController {
     void btnViewItemOnAction(ActionEvent event) {
         try {
             viewItemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/View_Item_Form.fxml"))));
+            viewItemStage.setTitle("Vitw Item Form");
             viewItemStage.show();
         } catch (IOException e) {
             showAlerts(e.getClass().getName(), e.getMessage());

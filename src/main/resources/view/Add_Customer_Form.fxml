@@ -57,7 +57,7 @@
             <Font name="Calibri" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="21.0" layoutY="580.0" text="Postal Code         : ">
+      <Label layoutX="22.0" layoutY="580.0" text="Postal Code        : ">
          <font>
             <Font name="Calibri" size="25.0" />
          </font>
@@ -91,12 +91,12 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <Button fx:id="btnAdd" layoutX="344.0" layoutY="645.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="87.0" text="ADD">
+      <Button fx:id="btnAdd" layoutX="313.0" layoutY="648.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="36.0" prefWidth="100.0" text="ADD">
          <font>
             <Font name="Corbel Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="btnClear" layoutX="450.0" layoutY="645.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="CLEAR">
+      <Button fx:id="btnClear" layoutX="437.0" layoutY="648.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="100.0" text="CLEAR">
          <font>
             <Font name="Corbel Bold" size="20.0" />
          </font>

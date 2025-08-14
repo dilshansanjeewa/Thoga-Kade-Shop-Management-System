@@ -25,6 +25,7 @@ public class ThogaKadeHomePageFormController {
     void btnCustomerManagementOnaction(ActionEvent event) {
         try {
             customerStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Customer_Management_Form.fxml"))));
+            customerStage.setTitle("Customer Management Form");
             customerStage.show();
         } catch (IOException e) {
             showAlert(e.getClass().getName(), e.getMessage());
@@ -35,6 +36,7 @@ public class ThogaKadeHomePageFormController {
     void btnItemManagementOnAction(ActionEvent event) {
         try {
             itemStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Item_Management_Form.fxml"))));
+            itemStage.setTitle("Item Management Form");
             itemStage.show();
         } catch (IOException e) {
             showAlert(e.getClass().getName(), e.getMessage());

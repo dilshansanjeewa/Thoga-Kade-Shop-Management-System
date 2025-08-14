@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomerFormController">
+<AnchorPane prefHeight="700.0" prefWidth="550.0" style="-fx-background-color: HONEYDEW;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomerFormController">
     <children>
         <Line endX="449.9000244140625" layoutX="101.0" layoutY="59.0" startX="-100.0" />
         <Label layoutX="94.0" layoutY="14.0" text="UDATE CUSTOMER FORM">
@@ -58,7 +58,7 @@
                 <Font name="Calibri" size="25.0" />
             </font>
         </Label>
-        <Label layoutX="21.0" layoutY="580.0" text="Postal Code         : ">
+        <Label layoutX="22.0" layoutY="580.0" text="Postal Code        : ">
             <font>
                 <Font name="Calibri" size="25.0" />
             </font>
@@ -87,7 +87,7 @@
                 <Font name="Calibri Bold" size="18.0" />
             </font>
         </JFXTextField>
-        <Button fx:id="btnUpdate" disable="true" layoutX="282.0" layoutY="649.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="106.0" text="UPDATE">
+        <Button fx:id="btnUpdate" disable="true" layoutX="302.0" layoutY="649.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="36.0" prefWidth="106.0" text="UPDATE">
             <font>
                 <Font name="Corbel Bold" size="20.0" />
             </font>
