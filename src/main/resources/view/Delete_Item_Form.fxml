@@ -20,22 +20,22 @@
             <Font name="Bell MT Bold" size="28.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="132.0" text="Description       :">
+      <Label layoutX="20.0" layoutY="132.0" text="Description      :">
          <font>
             <Font name="Candara Bold" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="22.0" layoutY="188.0" text="Pack Size            :">
+      <Label layoutX="22.0" layoutY="188.0" text="Pack Size          :">
          <font>
             <Font name="Candara Bold" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="21.0" layoutY="250.0" text="Unit Price (Rs.) :">
+      <Label layoutX="21.0" layoutY="250.0" text="Unit Price         :">
          <font>
             <Font name="Candara Bold" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="25.0" layoutY="306.0" text="QTY on Hand    :">
+      <Label layoutX="23.0" layoutY="306.0" text="QTY on Hand  :">
          <font>
             <Font name="Candara Bold" size="25.0" />
          </font>
@@ -62,24 +62,24 @@
          </font>
       </Button>
       <Line endX="537.699951171875" endY="-1.52587890625E-5" layoutX="112.0" layoutY="361.0" startX="-122.60000610351562" startY="-3.814697265625E-6" />
-      <Label fx:id="lblDescription" layoutX="197.0" layoutY="129.0" prefHeight="32.0" prefWidth="450.0">
+      <Label fx:id="lblDescription" layoutX="199.0" layoutY="129.0" prefHeight="32.0" prefWidth="450.0">
          <font>
             <Font name="Segoe UI Bold" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="lblPackSize" layoutX="199.0" layoutY="187.0" prefHeight="32.0" prefWidth="149.0">
-         <font>
-            <Font name="Calibri" size="28.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblUnitPrice" layoutX="201.0" layoutY="247.0" prefHeight="35.0" prefWidth="200.0">
+      <Label fx:id="lblPackSize" layoutX="201.0" layoutY="187.0" prefHeight="32.0" prefWidth="149.0">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="lblQtyonHand" layoutX="197.0" layoutY="303.0" prefHeight="38.0" prefWidth="142.0">
+      <Label fx:id="lblUnitPrice" layoutX="199.0" layoutY="247.0" prefHeight="35.0" prefWidth="250.0">
          <font>
-            <Font name="Bodoni MT" size="30.0" />
+            <Font name="Calibri" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblQtyonHand" layoutX="200.0" layoutY="303.0" prefHeight="38.0" prefWidth="142.0">
+         <font>
+            <Font name="Calibri" size="30.0" />
          </font>
       </Label>
    </children>
