@@ -224,6 +224,9 @@ public class AddCustomerFormController implements Initializable {
         } else if (txtPostalCode.getText() == null || txtPostalCode.getText().isEmpty()) {
             showAlearts("Input Error...","Please input postal code...");
             return false;
+        } else if (txtPostalCode.getText().length() != 5) {
+            showAlearts("INVALID...","Invalid Postal Code...\nPlease Input Valid Postal Code...");
+            return false;
         }
         return true;
     }
