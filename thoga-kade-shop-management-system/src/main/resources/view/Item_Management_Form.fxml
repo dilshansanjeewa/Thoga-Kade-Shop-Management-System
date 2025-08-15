@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="350.0" prefWidth="600.0" style="-fx-background-color: MINTCHREAM;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemManagmentFormController">
+    <children>
+        <Label layoutX="252.0" style="-fx-background-color: KHAKI; -fx-border-color: BLACK;" text="Thoga Kade">
+            <font>
+                <Font name="Arial Narrow Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutY="25.0" prefHeight="36.0" prefWidth="600.0" style="-fx-background-color: KHAKI; -fx-border-color: BLACK;" text="Item MANAGEMENT FORM">
+            <font>
+                <Font name="Stencil" size="35.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnDeleteItem" layoutX="310.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnDeleteItemOnAction" prefHeight="46.0" prefWidth="267.0" text="Delete Item">
+            <font>
+                <Font name="Lucida Fax Demibold" size="25.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnViewItem" layoutX="311.0" layoutY="116.0" mnemonicParsing="false" onAction="#btnViewItemOnAction" prefHeight="46.0" prefWidth="267.0" text="View Item">
+            <font>
+                <Font name="Lucida Fax Demibold" size="25.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnUpdateItem" layoutX="21.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnUpdateItemOnAction" prefHeight="46.0" prefWidth="267.0" text="Update Item">
+            <font>
+                <Font name="Lucida Fax Demibold" size="25.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnAddItem" layoutX="22.0" layoutY="116.0" mnemonicParsing="false" onAction="#btnAddItemOnAction" prefHeight="46.0" prefWidth="267.0" text="Add Item">
+            <font>
+                <Font name="Lucida Fax Demibold" size="25.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnExit" layoutX="435.0" layoutY="296.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: RED; -fx-border-color: WHITE;" text="EXIT" textFill="WHITE">
+            <font>
+                <Font name="Lucida Fax Demibold" size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
